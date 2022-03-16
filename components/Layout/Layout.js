@@ -16,7 +16,7 @@ import {
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
-  const baseUrl = "http://jamboree-b-clone.cloudjiffy.net/api/v1/";
+  const baseUrl = "http://103.217.221.98/api/v1/";
   const history = useRouter();
   useEffect(() => {
     if (Cookies.get("at")) {

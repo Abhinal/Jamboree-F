@@ -15,7 +15,7 @@ export default function Items({ data }) {
   useEffect(() => {
     if (is_login) {
       let mounted = true;
-      const res = fetch(`http://jamboree-b-clone.cloudjiffy.net/api/v1/product/cart`, {
+      const res = fetch(`http://103.217.221.98/api/v1/product/cart`, {
         method: "GET",
         headers,
       }).then((resp) => {
