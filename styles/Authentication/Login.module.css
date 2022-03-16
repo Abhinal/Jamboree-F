@@ -1,0 +1,58 @@
+
+#login-image {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 63.71%), url("../../public/images/login-1.png");
+    background-size: cover;
+}
+
+.redph ::placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+  }
+
+.redph :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+   }
+   
+.redph ::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+   }
+
+.the-legend {
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 10px;
+}
+
+#login-form input:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+.the-fieldset {
+    border: 1px solid #e0e0e0;
+    /* padding: 10px; */
+}
+
+
+
+@media (max-width:768px) {
+
+    #login-image > div {
+        margin-bottom: auto;
+    }
+    
+    #login-form{
+        position: absolute;
+        background-color: white;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 100;
+        margin-top: 475px;
+        border-radius: 8%;
+    }
+    
+}

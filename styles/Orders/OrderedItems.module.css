@@ -1,0 +1,54 @@
+#orderedItems img{
+    
+    max-height: 136px;
+}
+#orderedItems p{
+    color:#8E8484;
+}
+.btn_addItems{
+    background-color: transparent;
+    border: none;
+    color:#C37777;
+}
+
+
+#hr{
+    border-top: 1px solid #C6B4B4;
+}
+
+
+#flexRadioDefault1{
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    /* appearance: none;     */
+    /* -webkit-appearance: none; */
+    outline: none;
+    cursor: pointer;
+}
+
+#flexRadioDefault1:checked {
+    background-color: #651010 !important;
+}
+
+#checkbox:checked{
+    background-color: #651010;
+}
+#orderedItems table td,#orderedItems table th{
+    border: none;
+    color:#8E8484;
+    font-size: 15px;
+}
+#button{
+    color:#FFFFFF;
+    background-color: #C37777;
+    border:none;
+    border-radius: 5px;
+}
+#quantity {
+    border: none;
+    background-color: #ffffff;
+  }

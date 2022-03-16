@@ -1,0 +1,26 @@
+.the-legend {
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 10px;
+}
+.the-fieldset {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+}
+
+.redph ::placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+  }
+
+.redph :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+   }
+   
+.redph ::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+   }

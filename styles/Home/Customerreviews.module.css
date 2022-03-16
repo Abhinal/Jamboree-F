@@ -1,0 +1,20 @@
+#crbanner{
+    background: #5B00000A;
+}
+
+#right{
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+#left{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+#crbanner a > i {
+    font-size: 3rem;
+    color: #00000066;
+}

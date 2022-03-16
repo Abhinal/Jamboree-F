@@ -14,3 +14,94 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#navbar {
+  box-shadow: inset 0px -2px 9px rgba(115, 40, 40, 0.15);
+}
+
+.nav-link {
+  color: #651010 !important;
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+  margin-left: 35px;
+}
+
+.defaultColor {
+  color: #651010 !important;
+}
+
+@media (min-width: 992px) {
+  #homeBanner img{
+    height: 100vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    height: 100%;
+    max-width: 80%;
+    position: fixed;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 50px;
+    padding-bottom: 15px;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 1px 2px rgb(134, 134, 134);
+    z-index: 11;
+  }
+
+  .navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    transition: left 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    position: fixed;
+    transition: left 500ms ease-in-out;
+    height: 100%;
+  }
+}
+
+.allura {
+  font-family: "Allura", cursive !important;
+}
+
+.cinzel {
+  font-family: "Cinzel", serif !important;
+}
+
+.montserrat {
+  font-family: Montserrat !important;
+}
+.bg-default{
+  background-color: #F7F1F0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-dark-jm {
+  background: #c37777 !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  color: #fff !important;
+}
+
+.btn-dark-jm:hover {
+  background: #e6bebe !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  color:  #651010 !important;
+}

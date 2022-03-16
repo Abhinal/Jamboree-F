@@ -1,0 +1,16 @@
+.line {
+    background-color: #FFE8E8;
+    max-width: 1px;
+    padding: 2.5px;
+}
+
+#aboutus img{
+    max-height: 500px;
+}
+
+@media (max-width: 992px) {
+    #img-2 {
+        transform: scaleX(-1);
+    }
+    
+}
