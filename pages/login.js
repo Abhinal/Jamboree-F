@@ -16,6 +16,7 @@ import {
 
 export default function Login() {
   const is_login = useSelector((state) => state.jamboree.is_login);
+  const name = useSelector((state) => state.jamboree.username);
   const router = useRouter();
   if (is_login) {
     router.back();
@@ -31,11 +32,14 @@ export default function Login() {
   const [is_existing, setIs_existing] = useState("");
   const [emailValid, setEmailValid] = useState(false);
 
-  const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const [visible, setVisible] = useState(false);
   const [password, setPassword] = useState("");
   const [pwdError, setPwdError] = useState("");
+   
+  useEffect(() => {
+    
+  }, [is_existing, name])
 
   const fetchUser = async (e) => {
     e.preventDefault();
@@ -53,11 +57,10 @@ export default function Login() {
     ).then((res) => {
       if (res.ok) {
         res.json().then((resp) => {
-          is_existing = resp.is_existing;
-          setIs_existing(is_existing);
+          setIs_existing(resp.is_existing);
           setEmailValid(true);
-          if (is_existing) {
-            setName(resp.name);
+          if (resp.name) {
+            dispatch(updateName(resp.name));
           }
         });
       } else {
