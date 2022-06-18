@@ -4,7 +4,7 @@ import Items from "../../components/Orders/Items";
 import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
-  const res = await fetch("http://103.217.221.98/api/v1/product/category");
+  const res = await fetch("http://127.0.0.1:8000/api/v1/product/category");
   const cats = await res.json();
 
   const paths = cats.map((cat) => ({
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `http://103.217.221.98/api/v1/product/category/${params.id}`
+    `http://127.0.0.1:8000/api/v1/product/category/${params.id}`
   );
   const data = await res.json();
 

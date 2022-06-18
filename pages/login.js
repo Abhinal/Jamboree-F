@@ -16,7 +16,8 @@ import {
 
 export default function Login() {
   const is_login = useSelector((state) => state.jamboree.is_login);
-  const name = useSelector((state) => state.jamboree.username);
+  // const name = useSelector((state) => state.jamboree.username);
+  const [name, setName] = useState("")
   const router = useRouter();
   if (is_login) {
     router.back();
@@ -61,6 +62,7 @@ export default function Login() {
           setEmailValid(true);
           if (resp.name) {
             dispatch(updateName(resp.name));
+            setName(resp.name)
           }
         });
       } else {
@@ -110,7 +112,7 @@ export default function Login() {
 
   const signup = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://103.217.221.98/api/v1/user/signup", {
+    const response = await fetch("http://data.revizify.com/api/v1/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email,
