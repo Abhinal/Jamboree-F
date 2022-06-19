@@ -15,7 +15,7 @@ export default function Items({ data }) {
   useEffect(() => {
     if (is_login) {
       let mounted = true;
-      const res = fetch(`http://103.217.221.52/api/v1/product/cart`, {
+      const res = fetch(`http://103.217.221.128/api/v1/product/cart`, {
         method: "GET",
         headers,
       }).then((resp) => {

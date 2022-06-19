@@ -45,7 +45,7 @@ export default function Login() {
   const fetchUser = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://103.217.221.52/api/v1/user/check_email",
+      "http://103.217.221.128/api/v1/user/check_email",
       {
         method: "POST",
         body: JSON.stringify({
@@ -76,7 +76,7 @@ export default function Login() {
 
   const login = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://103.217.221.52/api/v1/user/login", {
+    const response = await fetch("http://103.217.221.128/api/v1/user/login", {
       method: "POST",
       body: JSON.stringify({
         email,
@@ -158,7 +158,7 @@ export default function Login() {
   const resetLink = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://103.217.221.52/api/v1/user/password_reset/",
+      "http://103.217.221.128/api/v1/user/password_reset/",
       {
         method: "POST",
         body: JSON.stringify({

@@ -8,7 +8,7 @@ const initialState = {
   rt: "",
   headers: "",
   lastOrder: {},
-  apiurl: "http://103.217.221.52/api/v1/",
+  apiurl: "http://103.217.221.128/api/v1/",
   cancel_reason: [],
   username: "user",
   email: "",

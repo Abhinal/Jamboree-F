@@ -6,7 +6,7 @@ import { updateCancelReason } from "../../store/reducer";
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `http://103.217.221.52/api/v1/product/reason`
+    `http://103.217.221.128/api/v1/product/reason`
   );
   const data = await res.json();
 

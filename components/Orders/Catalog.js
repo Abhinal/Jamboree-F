@@ -21,7 +21,7 @@ export default function Catalog(props) {
       router.push("/login");
     } else {
       const response = await fetch(
-        "http://103.217.221.52/api/v1/product/cart",
+        "http://103.217.221.128/api/v1/product/cart",
         {
           method: "POST",
           body: JSON.stringify({
@@ -49,7 +49,7 @@ export default function Catalog(props) {
       router.push("/login");
     } else {
       const response = await fetch(
-        "http://103.217.221.52/api/v1/product/cart",
+        "http://103.217.221.128/api/v1/product/cart",
         {
           method: "DELETE",
           body: JSON.stringify({
@@ -73,7 +73,7 @@ export default function Catalog(props) {
   };
 
   // const removeCartApi = async (prod_id) => {
-  //   const response = await fetch("http://103.217.221.52/api/v1/product/cart", {
+  //   const response = await fetch("http://103.217.221.128/api/v1/product/cart", {
   //     method: "DELETE",
   //     body: JSON.stringify({
   //       prod_id,
