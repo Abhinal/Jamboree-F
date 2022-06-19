@@ -18,7 +18,7 @@ export default function CancelPopup() {
   console.warn(reasonForm)
   const cancel = async () => {
     if(reasonForm){
-      const response = await fetch("http://103.217.221.98/api/v1/product/order", {
+      const response = await fetch("http://103.217.221.52/api/v1/product/order", {
       method: "DELETE",
       body: JSON.stringify({
         order_id,
