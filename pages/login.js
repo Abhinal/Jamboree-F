@@ -112,7 +112,7 @@ export default function Login() {
 
   const signup = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://data.revizify.com/api/v1/user/signup", {
+    const response = await fetch("http://103.217.221.128/api/v1/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email,
