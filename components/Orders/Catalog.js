@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useDispatch, useSelector } from "react-redux";
-import { updateProductCart, makeHeaders } from "../../store/reducer";
+import { updateProductCart, makeHeaders, updateCart } from "../../store/reducer";
 import { Router, useRouter } from "next/router";
 
 export default function Catalog(props) {
@@ -38,6 +38,7 @@ export default function Catalog(props) {
                 quantity: resp.quantity,
               })
             );
+            dispatch(updateCart(resp.count))
           });
         }
       });
@@ -66,6 +67,7 @@ export default function Catalog(props) {
                 quantity: resp.quantity,
               })
             );
+            dispatch(updateCart(resp.count))
           });
         }
       });

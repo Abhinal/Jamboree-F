@@ -41,7 +41,8 @@ export default function Checkoutbanner() {
                   <p className="" id="p">
                     Your Booking has been successfully confirmed on{" "}
                     <b>{dateForm}</b>.<br />
-                    Confirmation will be sent through email within 15 mins.
+                    Confirmation will be sent through email within 15 mins.<br />
+                    We will contact you soon.
                   </p>
                 </div>
                 <div className="col-lg-3  m-auto">
@@ -59,7 +60,6 @@ export default function Checkoutbanner() {
               </h3>
               {eval(data).map((product) => (
                 <>
-                  {console.warn(product)}
                   <div className="container row">
                     <div className="col-4 border bg-white">
                       <div className="d-flex h-100 align-items-center justify-content-center">

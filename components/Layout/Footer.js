@@ -1,16 +1,19 @@
 import styles from "../../styles/Layout/Footer.module.css"
 import Image from "next/image";
+import Logo from "../../public/images/logo_white.png";
+import Whatsapp from "../../public/images/whatsapp.gif";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer
       className="page-footer font-small indigo text-white montserrat"
       id={styles.footer}
-    > 
+    >
       <div className="container-fluid text-center text-md-left">
         <div className="row">
           <div className="col-md-4 d-flex mb-auto mt-3 mt-md-5 justify-content-center">
-            <Image src="/../public/images/logo_white.png" alt="jamboree logo" objectFit="contain" width={185} height={57}/>
+            <Image src={Logo} alt="jamboree logo" objectFit="contain" width={185} height={57} />
           </div>
           <hr className="clearfix w-100 d-md-none" />
           <hr className="clearfix w-100 d-md-none" />
@@ -52,6 +55,12 @@ export default function Footer() {
       <div className="footer-copyright text-center py-3">
         © Copyright JamBoree 2021:
         <a href="https://jamboree.com/" className="text-white"> JamBoree.com</a>
+      </div>
+      <div className="fixed-bottom d-flex justify-content-end m-2" >
+        <a href="https://wa.me/919123337544?text=Hi Jamboree! I need your help." target="_blank" rel="noreferrer">
+          {/* <img src={Whatsapp} alt="whatsapp" width={"60px"} /> */}
+          <Image src={Whatsapp} alt="whatsapp" width={"60px"} height={"60px"}/>
+        </a>
       </div>
     </footer>
   );

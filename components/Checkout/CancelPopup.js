@@ -15,7 +15,6 @@ export default function CancelPopup() {
   const [reasonErr, setReasonErr] = useState("")
   const [comment, setComment] = useState("")
 
-  console.warn(reasonForm)
   const cancel = async () => {
     if(reasonForm){
       const response = await fetch("https://data.jamboreefashions.com/api/v1/product/order", {

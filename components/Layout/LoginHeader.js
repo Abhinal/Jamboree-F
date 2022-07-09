@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from "../../styles/Layout/Navbar.module.css";
 import Image from "next/image";
 import Logo from "../../public/images/logo.png";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
+import { updateCart } from "../../store/reducer";
 
 export default function LoginHeader() {
   const router = useRouter();
   const name = useSelector((state) => state.jamboree.username);
+  const count = useSelector((state) => state.jamboree.cart_count);
+  const headers = useSelector((state) => state.jamboree.headers);
+  const dispatch = useDispatch();
+
+  // dispatch(updateCart(10))
+  useEffect(() => {
+    const response = fetch("https://data.jamboreefashions.com/api/v1/product/cartDetails", {
+      method: "GET",
+      headers,
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((resp) => {
+          dispatch(updateCart(resp.count))
+        })
+      }
+    });
+  }, [])
+
+
+
   const logout = () => {
     Cookies.remove("at");
     Cookies.remove("rt");
     router.push("/");
   };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light bg-white fixed-top pr-lg-5 pr-md-4 "
@@ -85,13 +107,13 @@ export default function LoginHeader() {
           </li>
           <li className="nav-item">
             <Link href="/cart">
-              <>
+              <span>
                 <a className="nav-link d-lg-flex flex-row-reverse align-items-center" role={"button"}>
                   <i className="fas fa-shopping-cart ml-lg-2 mr-2" />
                   Cart
-                <p id="lblCartCount" className="rounded border border-white">1</p>
+                  <p id="lblCartCount" className="rounded border border-white" style={{ "margin-right": "-10px" }}>{count}</p>
                 </a>
-              </>
+              </span>
             </Link>
           </li>
           <li className="nav-item">

@@ -11,6 +11,7 @@ import {
   updatePhone,
   updateProductCart,
 } from "../../store/reducer";
+import EachProduct from "./EachProduct";
 
 export default function OrderedItems() {
   const router = useRouter();
@@ -65,8 +66,45 @@ export default function OrderedItems() {
   }
   const fabricSelection = async (idx) => {
     sentData[idx]["have_fabrics"] = !sentData[idx]["have_fabrics"];
-    nextData[idx]["have_fabrics"] = !sentData[idx]["have_fabrics"];
+    nextData[idx]["have_fabrics"] = !nextData[idx]["have_fabrics"];
   };
+
+
+  useEffect(()=>{
+
+    if (numExist) {
+      const response = fetch(
+        "https://data.jamboreefashions.com/api/v1/product/order",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            sentData,
+            dateForm,
+            timeForm,
+          }),
+          headers,
+        }).then((res) => {
+          if (res.ok) {
+            res.json().then((resp) => {
+              const order_id = resp.order_id;
+              dispatch(deleteProductCart());
+              dispatch(
+                updateLastOrder({
+                  data: JSON.stringify(nextData),
+                  order_id: order_id,
+                  date: dateForm,
+                  time: timeForm,
+                })
+              );
+
+              router.push("/cart/checkout");
+            });
+          }
+        }
+        )
+    }
+
+  }, [numExist])
 
   const confirm = async () => {
     if (dateForm) {
@@ -105,37 +143,10 @@ export default function OrderedItems() {
             });
           }
 
-          if (numExist) {
-            const response = fetch(
-              "https://data.jamboreefashions.com/api/v1/product/order",
-              {
-                method: "POST",
-                body: JSON.stringify({
-                  sentData,
-                  dateForm,
-                  timeForm,
-                }),
-                headers,
-              }).then((res) => {
-                if (res.ok) {
-                  res.json().then((resp) => {
-                    const order_id = resp.order_id;
-                    dispatch(deleteProductCart());
-                    dispatch(
-                      updateLastOrder({
-                        data: JSON.stringify(nextData),
-                        order_id: order_id,
-                        date: dateForm,
-                        time: timeForm,
-                      })
-                    );
+          
 
-                    router.push("/cart/checkout");
-                  });
-                }
-              }
-            )
-          }
+
+
         });
       } else {
         setDateErr(false);
@@ -158,48 +169,7 @@ export default function OrderedItems() {
               PRODUCT DETAILS
             </h3>
             {data.map((product, idx) => (
-              <>
-                <div className="container row">
-                  <div className="col-4 border bg-white">
-                    <div className="d-flex h-100 align-items-center justify-content-center">
-                      <Image
-                        src={"/" + product.prod_image}
-                        alt={product.prod_name}
-                        width={100}
-                        height={120}
-                      />
-                    </div>
-                  </div>
-                  <div className="col-8">
-                    <h3 className="cinzel defaultColor">{product.prod_name}</h3>
-                    <p className="montserrat mb-2" id="p">
-                      {product.prod_detail}
-                    </p>
-                    <p className="montserrat defaultColor">
-                      <form className="form-check pl-3">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="flexRadioDefault"
-                          id={styles.flexRadioDefault1}
-                          onClick={() => fabricSelection(idx)}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault1"
-                        >
-                          I have all/some the fabric for the item
-                        </label>
-                      </form>
-                    </p>
-                    <p className="montserrat" id="p">
-                      Qty{" "}
-                      <button id={styles.quantity}>{product.quantity}</button>
-                    </p>
-                  </div>
-                </div>
-                <hr className="border" />
-              </>
+              <EachProduct product={product} idx={idx} key={idx} fabricSelection={fabricSelection}/>
             ))}
           </div>
 
@@ -223,14 +193,22 @@ export default function OrderedItems() {
                   )}
                 </div>
                 <div className="form-group">
-                  <input
-                    type="time"
+                  {/* <input
+                    type="options"
                     className="form-control"
                     onChange={(e) => setTime(e.target.value)}
                     value={timeForm}
-                  />
+                  /> */}
+                  <select name="time" id="time" className="form-control" onChange={(e) => setTime(e.target.value)}>
+                    <option value="">Select Time Slot</option>
+                    <option value="M to 12 PM">10 AM to 12 PM</option>
+                    <option value="12 PM to 2 PM">12 PM to 2 PM</option>
+                    <option value="2 PM to 4 PM">2 PM to 4 PM</option>
+                    <option value="4 PM to 6 PM">4 PM to 6 PM</option>
+                    <option value="6 PM to 8 PM">6 PM to 8 PM</option>
+                  </select>
                   {timeError ? (
-                    <p className="text-danger">Please Select Correct Time</p>
+                    <p className="text-danger">Please Select Correct Time Slot</p>
                   ) : (
                     ""
                   )}

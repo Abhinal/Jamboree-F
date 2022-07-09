@@ -13,6 +13,8 @@ const initialState = {
   username: "user",
   email: "",
   phone_number: "",
+  cart_count: 0,
+  faqQuesAns: []
 };
 
 export const Reducer = createSlice({
@@ -55,6 +57,12 @@ export const Reducer = createSlice({
     updatePhone: (state, action) => {
       state.phone_number = action.payload;
     },
+    updateCart: (state, action) => {
+      state.cart_count = action.payload;
+    },
+    updateFaq: (state, action) => {
+      state.faqQuesAns = action.payload;
+    },
     // updateLoginINFO: (state, action) => {
     //   state.A
     // }
@@ -73,7 +81,9 @@ export const {
   deleteProductCart,
   updateName,
   updateEmail,
-  updatePhone
+  updatePhone,
+  updateCart,
+  updateFaq
 } = Reducer.actions;
 
 export default Reducer.reducer;

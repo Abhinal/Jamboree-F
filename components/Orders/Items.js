@@ -47,6 +47,14 @@ export default function Items({ data }) {
             <Catalog categoryName={cat_name} data={data[cat_name]} />
           </div>
         ))}
+        <Link href="/cart">
+          <button
+            className={"py-2 btn-dark-jm fixed-bottom  d-lg-none"}
+          // onClick={() => addCartApi(product.prod_id)}
+          >
+            Go to cart
+          </button>
+        </Link>
       </div>
     </div>
   );
