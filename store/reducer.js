@@ -8,7 +8,7 @@ const initialState = {
   rt: "",
   headers: "",
   lastOrder: {},
-  apiurl: "http://103.217.221.128/api/v1/",
+  apiurl: "https://data.jamboreefashions.com/api/v1/",
   cancel_reason: [],
   username: "user",
   email: "",

@@ -105,3 +105,12 @@ html {
   border-radius: 8px;
   color:  #651010 !important;
 }
+
+#lblCartCount {
+  font-size: 12px;
+  background: #651010;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  position: absolute;
+}

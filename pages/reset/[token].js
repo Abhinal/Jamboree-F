@@ -11,7 +11,7 @@ export default function Reset() {
 
   const resetLink = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://103.217.221.128/api/v1/user/password_reset/confirm/", {
+    const response = await fetch("https://data.jamboreefashions.com/api/v1/user/password_reset/confirm/", {
       method: "POST",
       body: JSON.stringify({
         token,

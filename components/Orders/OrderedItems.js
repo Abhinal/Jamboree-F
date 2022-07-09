@@ -23,7 +23,7 @@ export default function OrderedItems() {
 
   useEffect(() => {
     let mounted = true;
-    const res = fetch("http://103.217.221.128/api/v1/product/cartDetails", {
+    const res = fetch("https://data.jamboreefashions.com/api/v1/product/cartDetails", {
       method: "POST",
       headers,
     }).then((res) => {
@@ -72,7 +72,7 @@ export default function OrderedItems() {
     if (dateForm) {
       if (timeForm) {
         const numRes = await fetch(
-          "http://103.217.221.128/api/v1/user/phoneExist",
+          "https://data.jamboreefashions.com/api/v1/user/phoneExist",
           {
             method: "GET",
             headers,
@@ -84,7 +84,7 @@ export default function OrderedItems() {
                 let phone_number = prompt("Please enter your mobile number:", "");
                 if (phone_number) {
                   const response = fetch(
-                    "http://103.217.221.128/api/v1/user/phoneExist",
+                    "https://data.jamboreefashions.com/api/v1/user/phoneExist",
                     {
                       method: "POST",
                       body: JSON.stringify({
@@ -107,7 +107,7 @@ export default function OrderedItems() {
 
           if (numExist) {
             const response = fetch(
-              "http://103.217.221.128/api/v1/product/order",
+              "https://data.jamboreefashions.com/api/v1/product/order",
               {
                 method: "POST",
                 body: JSON.stringify({

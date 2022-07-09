@@ -16,7 +16,7 @@ import {
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
-  const baseUrl = "http://103.217.221.128/api/v1/";
+  const baseUrl = "https://data.jamboreefashions.com/api/v1/";
   const history = useRouter();
   useEffect(() => {
     if (Cookies.get("at")) {

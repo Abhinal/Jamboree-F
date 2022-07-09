@@ -79,7 +79,7 @@ export default function Customerbanner() {
         </div>
       </div>
       <Link href="/gallery" passHref={true}>
-        <h5 className="text-center defaultColor mt-5 mb-5">Show more</h5>
+        <h5 className="text-center defaultColor mt-5 mb-5" role={'button'}>Show more</h5>
       </Link>
     </div>
   );

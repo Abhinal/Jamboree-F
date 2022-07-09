@@ -21,7 +21,7 @@ export default function Catalog(props) {
       router.push("/login");
     } else {
       const response = await fetch(
-        "http://103.217.221.128/api/v1/product/cart",
+        "https://data.jamboreefashions.com/api/v1/product/cart",
         {
           method: "POST",
           body: JSON.stringify({
@@ -49,7 +49,7 @@ export default function Catalog(props) {
       router.push("/login");
     } else {
       const response = await fetch(
-        "http://103.217.221.128/api/v1/product/cart",
+        "https://data.jamboreefashions.com/api/v1/product/cart",
         {
           method: "DELETE",
           body: JSON.stringify({
@@ -73,7 +73,7 @@ export default function Catalog(props) {
   };
 
   // const removeCartApi = async (prod_id) => {
-  //   const response = await fetch("http://103.217.221.128/api/v1/product/cart", {
+  //   const response = await fetch("https://data.jamboreefashions.com/api/v1/product/cart", {
   //     method: "DELETE",
   //     body: JSON.stringify({
   //       prod_id,

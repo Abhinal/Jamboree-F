@@ -7,15 +7,14 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
 
-
 export default function LoginHeader() {
-    const router = useRouter()
-    const name = useSelector((state) => state.jamboree.username);
-    const logout = () => {
-        Cookies.remove("at");
-        Cookies.remove("rt");
-        router.push("/")
-      };
+  const router = useRouter();
+  const name = useSelector((state) => state.jamboree.username);
+  const logout = () => {
+    Cookies.remove("at");
+    Cookies.remove("rt");
+    router.push("/");
+  };
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light bg-white fixed-top pr-lg-5 pr-md-4 "
@@ -86,10 +85,13 @@ export default function LoginHeader() {
           </li>
           <li className="nav-item">
             <Link href="/cart">
-              <a className="nav-link d-lg-flex flex-row-reverse align-items-center">
-                <i className="fas fa-shopping-cart ml-lg-2 mr-2" />
-                Cart
-              </a>
+              <>
+                <a className="nav-link d-lg-flex flex-row-reverse align-items-center" role={"button"}>
+                  <i className="fas fa-shopping-cart ml-lg-2 mr-2" />
+                  Cart
+                <p id="lblCartCount" className="rounded border border-white">1</p>
+                </a>
+              </>
             </Link>
           </li>
           <li className="nav-item">

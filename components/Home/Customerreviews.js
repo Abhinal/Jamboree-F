@@ -65,7 +65,7 @@ export default function Customerreviews() {
                     />
                   </div>
                   <div className="col-7 card-title">
-                    Abhinav Agarwal
+                    Sumit Keshwani
                     <br />5 ⭐⭐⭐⭐⭐
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function Customerreviews() {
                     />
                   </div>
                   <div className="col-7 card-title">
-                    Abhinav Agarwal
+                    Sumit Keshwani
                     <br />5 ⭐⭐⭐⭐⭐
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default function Customerreviews() {
                     />
                   </div>
                   <div className="col-7 card-title">
-                    Abhinav Agarwal
+                    Sumit Keshwani
                     <br />5 ⭐⭐⭐⭐⭐
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function Customerreviews() {
                     />
                   </div>
                   <div className="col-7 card-title">
-                    Abhinav Agarwal
+                    Sumit Keshwani
                     <br />5 ⭐⭐⭐⭐⭐
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export default function Customerreviews() {
                     />
                   </div>
                   <div className="col-7 card-title">
-                    Abhinav Agarwal
+                    Sumit Keshwani
                     <br />5 ⭐⭐⭐⭐⭐
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function Customerreviews() {
                     />
                   </div>
                   <div className="col-7 card-title">
-                    Abhinav Agarwal
+                    Sumit Keshwani
                     <br />5 ⭐⭐⭐⭐⭐
                   </div>
                 </div>

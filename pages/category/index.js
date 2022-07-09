@@ -3,7 +3,7 @@ import Footer from "../../components/Layout/Footer";
 import Categories from "../../components/Orders/Categories";
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://103.217.221.128/api/v1/product/category");
+  const res = await fetch("https://data.jamboreefashions.com/api/v1/product/category");
   const data = await res.json();
   return {
     props: { cats: data },
